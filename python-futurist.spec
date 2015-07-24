@@ -100,7 +100,7 @@ popd
 %license LICENSE
 %{python2_sitelib}/%{pypi_name}
 %{python2_sitelib}/ 
-%{python2_sitelib}/%{pypi_name}-%{version}-py?.?.egg-info
+%{python2_sitelib}/%{pypi_name}-*-py?.?.egg-info
 
 %if 0%{?with_python3}
 %files -n python3-%{pypi_name}
@@ -108,7 +108,7 @@ popd
 %license LICENSE
 %{python3_sitelib}/%{pypi_name}
 %{python3_sitelib}/ 
-%{python3_sitelib}/%{pypi_name}-%{version}-py?.?.egg-info
+%{python3_sitelib}/%{pypi_name}-*-py?.?.egg-info
 %endif
 
 %changelog
