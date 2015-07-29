@@ -15,7 +15,7 @@ Summary:        Useful additions to futures, from the future
 
 License:        ASL 2.0
 URL:            http://docs.openstack.org/developer/futurist
-Source0:        https://pypi.python.org/packages/source/f/%{pypi_name}/%{pypi_name}-%{version}.tar.gz
+Source0:        http://tarballs.openstack.org/%{pypi_name}/%{pypi_name}-master.tar.gz
 BuildArch:      noarch
  
 BuildRequires:  python2-devel
