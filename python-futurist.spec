@@ -12,7 +12,6 @@ Name:           python-%{pypi_name}
 Version:        0.3.0
 Release:        1%{?dist}
 Summary:        Useful additions to futures, from the future
-%{?python_provide:%python_provide python2-%{pypi_name}}
 
 License:        ASL 2.0
 URL:            http://docs.openstack.org/developer/futurist
@@ -26,11 +25,20 @@ BuildRequires:  python-oslo-sphinx
 BuildRequires:  python-futures
 BuildRequires:  python-monotonic
 BuildRequires:  python-contextlib2
+BuildRequires:  python-setuptools
+BuildRequires:  python-six
 
 Requires:       python-six >= 1.9.0
 Requires:       python-monotonic
 Requires:       python-futures >= 3.0
 Requires:       python-contextlib2 >= 0.4.0
+
+%package -n python2-%{pypi_name}
+Summary:        Useful additions to futures, from the future
+%{?python_provide:%python_provide python2-%{pypi_name}}
+
+%description -n python2-%{pypi_name}
+Code from the future, delivered to you in the now.
 
 %if 0%{?with_python3}
 %package -n python3-%{pypi_name}
@@ -40,6 +48,8 @@ Summary:        Useful additions to futures, from the future
 BuildRequires:  python3-devel
 BuildRequires:  python3-pbr
 BuildRequires:  python3-sphinx
+BuildRequires:  python3-setuptools
+BuildRequires:  python3-six
 
 Requires:       python3-six >= 1.9.0
 Requires:       python3-monotonic
@@ -98,7 +108,7 @@ pushd python3
 popd
 %endif
 
-%files
+%files -n python2-%{pypi_name}
 %doc html README.rst
 %license LICENSE
 %{python2_sitelib}/%{pypi_name}
@@ -116,6 +126,9 @@ popd
 * Tue Aug 18 2015 Alan Pevec <alan.pevec@redhat.com> 0.3.0-1
 - Update to upstream 0.3.0
 
+* Thu Aug 13 2015 jpena <jpena@redhat.com> - 0.1.1-5
+- Comply with updated Python packaging guidelines (II)
+- Add python-six and python-setuptools to BuildRequirements
 * Thu Aug 13 2015 jpena <jpena@redhat.com> - 0.1.1-4
 - Comply with updated Python packaging guidelines
 * Mon Aug 10 2015 jpena <jpena@redhat.com> - 0.1.1-3
