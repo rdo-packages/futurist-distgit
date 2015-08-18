@@ -9,13 +9,14 @@
 %global pypi_name futurist
 
 Name:           python-%{pypi_name}
-Version:        XXX
-Release:        XXX
+Version:        0.1.1
+Release:        4%{?dist}
 Summary:        Useful additions to futures, from the future
+%{?python_provide:%python_provide python2-%{pypi_name}}
 
 License:        ASL 2.0
 URL:            http://docs.openstack.org/developer/futurist
-Source0:        http://tarballs.openstack.org/%{pypi_name}/%{pypi_name}-master.tar.gz
+Source0:        https://pypi.python.org/packages/source/f/%{pypi_name}/%{pypi_name}-%{version}.tar.gz
 BuildArch:      noarch
  
 BuildRequires:  python2-devel
@@ -34,6 +35,7 @@ Requires:       python-contextlib2 >= 0.4.0
 %if 0%{?with_python3}
 %package -n python3-%{pypi_name}
 Summary:        Useful additions to futures, from the future
+%{?python_provide:%python_provide python3-%{pypi_name}}
 
 BuildRequires:  python3-devel
 BuildRequires:  python3-pbr
@@ -55,18 +57,13 @@ Futurist
 Code from the future, delivered to you in the now.
 
 %prep
-%setup -qc -n %{pypi_name}-%{upstream_version}
+%setup -qc
 
 mv %{pypi_name}-%{upstream_version} python2
 pushd python2
-# generate html docs
-sphinx-build doc/source html
-# remove the sphinx-build leftovers
-rm -rf html/.{doctrees,buildinfo}
 # copy LICENSE etc. to top level dir
 cp -a LICENSE ..
 cp -a README.rst ..
-cp -a html ..
 popd
 
 %if 0%{?with_python3}
@@ -76,6 +73,12 @@ cp -a python2 python3
 %build
 pushd python2
 %{__python2} setup.py build
+# generate html docs
+sphinx-build doc/source html
+# remove the sphinx-build leftovers
+rm -rf html/.{doctrees,buildinfo}
+# Copy doc to top level dir
+cp -a html ..
 popd
 
 %if 0%{?with_python3}
@@ -99,16 +102,22 @@ popd
 %doc html README.rst
 %license LICENSE
 %{python2_sitelib}/%{pypi_name}
-%{python2_sitelib}/ 
-%{python2_sitelib}/%{pypi_name}-*-py?.?.egg-info
+%{python2_sitelib}/%{pypi_name}-%{version}-py?.?.egg-info
 
 %if 0%{?with_python3}
 %files -n python3-%{pypi_name}
 %doc html README.rst
 %license LICENSE
 %{python3_sitelib}/%{pypi_name}
-%{python3_sitelib}/ 
-%{python3_sitelib}/%{pypi_name}-*-py?.?.egg-info
+%{python3_sitelib}/%{pypi_name}-%{version}-py?.?.egg-info
 %endif
 
 %changelog
+* Thu Aug 13 2015 jpena <jpena@redhat.com> - 0.1.1-4
+- Comply with updated Python packaging guidelines
+* Mon Aug 10 2015 jpena <jpena@redhat.com> - 0.1.1-3
+- Moved sphinx-build to build step
+* Fri Jul 24 2015 jpena <jpena@redhat.com> - 0.1.1-2
+- Removed absolute python_sitelib paths
+* Tue Jul 14 2015 jpena <jpena@redhat.com> - 0.1.1-1
+- Initial package.
