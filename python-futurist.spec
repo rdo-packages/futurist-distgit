@@ -9,8 +9,8 @@
 %global pypi_name futurist
 
 Name:           python-%{pypi_name}
-Version:        0.1.1
-Release:        4%{?dist}
+Version:        0.3.0
+Release:        1%{?dist}
 Summary:        Useful additions to futures, from the future
 %{?python_provide:%python_provide python2-%{pypi_name}}
 
@@ -113,6 +113,9 @@ popd
 %endif
 
 %changelog
+* Tue Aug 18 2015 Alan Pevec <alan.pevec@redhat.com> 0.3.0-1
+- Update to upstream 0.3.0
+
 * Thu Aug 13 2015 jpena <jpena@redhat.com> - 0.1.1-4
 - Comply with updated Python packaging guidelines
 * Mon Aug 10 2015 jpena <jpena@redhat.com> - 0.1.1-3
