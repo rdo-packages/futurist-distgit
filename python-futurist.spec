@@ -10,7 +10,7 @@
 
 Name:           python-%{pypi_name}
 Version:        0.3.0
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        Useful additions to futures, from the future
 
 License:        ASL 2.0
@@ -36,6 +36,8 @@ Requires:       python-contextlib2 >= 0.4.0
 %package -n python2-%{pypi_name}
 Summary:        Useful additions to futures, from the future
 %{?python_provide:%python_provide python2-%{pypi_name}}
+# python_provide does not exist in CBS Cloud buildroot
+Provides:       python-%{pypi_name} = %{version}
 
 %description -n python2-%{pypi_name}
 Code from the future, delivered to you in the now.
