@@ -19,6 +19,9 @@ BuildArch:      noarch
 %package -n python2-%{pypi_name}
 Summary:        Useful additions to futures, from the future
 %{?python_provide:%python_provide python2-%{pypi_name}}
+%if 0%{?fedora} < 23
+Obsoletes:      python-futurist < %{version}-%{release}
+%endif
 
 BuildRequires:  python2-devel
 BuildRequires:  python-pbr
