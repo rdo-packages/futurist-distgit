@@ -1,5 +1,5 @@
-# UUID          Group Name
-6ddfecad023c6f4fa3ac8c4d2583c502ea675a73 	Non-Interactive Users
-f6e3fd043ab046744513768dd0609f923ec0f235       	futurist-distgit-core
-c6196e88a33cf8463922831518c26c95b63c2b62        	futurist-distgit-ptl
-global:Registered-Users		Registered Users
+# UUID                                  	Group Name
+#
+c6196e88a33cf8463922831518c26c95b63c2b62	openstack/futurist-distgit-ptl
+f6e3fd043ab046744513768dd0609f923ec0f235	futurist-distgit-core
+global:Registered-Users                 	Registered Users
