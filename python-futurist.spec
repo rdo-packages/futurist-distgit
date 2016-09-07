@@ -7,8 +7,8 @@
 %global pypi_name futurist
 
 Name:           python-%{pypi_name}
-Version:        XXX
-Release:        XXX
+Version:        0.18.0
+Release:        1%{?dist}
 Summary:        Useful additions to futures, from the future
 
 License:        ASL 2.0
@@ -124,3 +124,6 @@ popd
 %endif
 
 %changelog
+* Wed Sep 07 2016 Haikel Guemar <hguemar@fedoraproject.org> 0.18.0-1
+- Update to 0.18.0
+
