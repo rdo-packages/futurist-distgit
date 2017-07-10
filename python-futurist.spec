@@ -119,3 +119,4 @@ rm -rf html/.{doctrees,buildinfo}
 %license LICENSE
 
 %changelog
+# REMOVEME: error caused by commit http://git.openstack.org/cgit/openstack/futurist/commit/?id=3b7dbd6ff830f4751f7282601625de1bde51d214
