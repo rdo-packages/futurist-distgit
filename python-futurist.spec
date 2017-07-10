@@ -25,8 +25,9 @@ Obsoletes:      python-futurist < %{version}-%{release}
 
 BuildRequires:  python2-devel
 BuildRequires:  python-pbr
+BuildRequires:  git
 BuildRequires:  python-sphinx
-BuildRequires:  python-oslo-sphinx
+BuildRequires:  python-openstackdocstheme
 BuildRequires:  python-futures
 BuildRequires:  python-monotonic
 BuildRequires:  python-prettytable
@@ -50,10 +51,8 @@ Summary:        Useful additions to futures, from the future
 
 BuildRequires:  python3-devel
 BuildRequires:  python3-pbr
-BuildRequires:  python3-oslo-sphinx
 BuildRequires:  python3-monotonic
 BuildRequires:  python3-prettytable
-BuildRequires:  python3-sphinx
 BuildRequires:  python3-setuptools
 BuildRequires:  python3-six
 
@@ -80,7 +79,7 @@ Futurist
 Code from the future, delivered to you in the now.
 
 %prep
-%setup -q -n %{pypi_name}-%{upstream_version}
+%autosetup -n %{pypi_name}-%{upstream_version} -S git
 
 %build
 %if 0%{?with_python3}
@@ -89,9 +88,9 @@ Code from the future, delivered to you in the now.
 %py2_build
 
 # generate html docs
-sphinx-build doc/source html
+%{__python2} setup.py build_sphinx -b html
 # remove the sphinx-build leftovers
-rm -rf html/.{doctrees,buildinfo}
+rm -rf doc/build/html/.{doctrees,buildinfo}
 
 
 %install
@@ -101,21 +100,21 @@ rm -rf html/.{doctrees,buildinfo}
 %py2_install
 
 %files -n python2-%{pypi_name}
-%doc html README.rst
+%doc README.rst
 %license LICENSE
 %{python2_sitelib}/%{pypi_name}
 %{python2_sitelib}/%{pypi_name}-*-py?.?.egg-info
 
 %if 0%{?with_python3}
 %files -n python3-%{pypi_name}
-%doc html README.rst
+%doc README.rst
 %license LICENSE
 %{python3_sitelib}/%{pypi_name}
 %{python3_sitelib}/%{pypi_name}-*-py?.?.egg-info
 %endif
 
 %files -n python-%{pypi_name}-doc
-%doc html
+%doc doc/build/html
 %license LICENSE
 
 %changelog
