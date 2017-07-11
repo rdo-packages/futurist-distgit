@@ -7,7 +7,7 @@
 %global pypi_name futurist
 
 Name:           python-%{pypi_name}
-Version:        0.21.0
+Version:        0.21.1
 Release:        1%{?dist}
 Summary:        Useful additions to futures, from the future
 
@@ -119,6 +119,9 @@ rm -rf html/.{doctrees,buildinfo}
 %license LICENSE
 
 %changelog
+* Tue Jul 11 2017 rdo-trunk <javier.pena@redhat.com> 0.21.1-1
+- Update to 0.21.1
+
 * Tue Feb 07 2017 Alfredo Moralejo <amoralej@redhat.com> 0.21.0-1
 - Update to 0.21.0
 
