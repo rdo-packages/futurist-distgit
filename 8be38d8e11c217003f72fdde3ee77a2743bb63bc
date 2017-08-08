@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a890539_59d8b653",
+        "filename": "python-futurist.spec",
+        "patchSetId": 1
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 128
+      },
+      "writtenOn": "2017-08-08T13:12:12Z",
+      "side": 1,
+      "message": "Although it\u0027s in requirements.txt pbr is not a runtime requirement for futurist (it\u0027s only imported in setup.py). It can be only BuildRequires.",
+      "range": {
+        "startLine": 38,
+        "startChar": 16,
+        "endLine": 38,
+        "endChar": 35
+      },
+      "revId": "8be38d8e11c217003f72fdde3ee77a2743bb63bc",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    }
+  ]
+}
