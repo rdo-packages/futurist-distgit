@@ -35,6 +35,7 @@ BuildRequires:  python-contextlib2
 BuildRequires:  python-setuptools
 BuildRequires:  python-six
 
+Requires:       python-pbr >= 2.0.0
 Requires:       python-six >= 1.9.0
 Requires:       python-monotonic
 Requires:       python-futures >= 3.0
@@ -56,6 +57,7 @@ BuildRequires:  python3-prettytable
 BuildRequires:  python3-setuptools
 BuildRequires:  python3-six
 
+Requires:       python3-pbr >= 2.0.0
 Requires:       python3-six >= 1.9.0
 Requires:       python3-monotonic
 Requires:       python3-contextlib2 >= 0.4.0
