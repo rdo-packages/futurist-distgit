@@ -6,6 +6,9 @@
 
 %global pypi_name futurist
 
+%global common_desc \
+Code from the future, delivered to you in the now.
+
 Name:           python-%{pypi_name}
 Version:        XXX
 Release:        XXX
@@ -42,7 +45,7 @@ Requires:       python-contextlib2 >= 0.4.0
 Requires:       python-prettytable
 
 %description -n python2-%{pypi_name}
-Code from the future, delivered to you in the now.
+%{common_desc}
 
 %if 0%{?with_python3}
 %package -n python3-%{pypi_name}
@@ -62,21 +65,21 @@ Requires:       python3-contextlib2 >= 0.4.0
 Requires:       python3-prettytable
 
 %description -n python3-%{pypi_name}
-Code from the future, delivered to you in the now.
+%{common_desc}
 %endif
 
 %package -n python-%{pypi_name}-doc
 Summary:        Useful additions to futures, from the future - documentation
 
 %description -n python-%{pypi_name}-doc
-Code from the future, delivered to you in the now. (documentation)
+%{common_desc}
 
 %description
 ========
 Futurist
 ========
 
-Code from the future, delivered to you in the now.
+%{common_desc}
 
 %prep
 %autosetup -n %{pypi_name}-%{upstream_version} -S git
