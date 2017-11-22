@@ -7,7 +7,7 @@
 %global pypi_name futurist
 
 Name:           python-%{pypi_name}
-Version:        1.3.0
+Version:        1.3.1
 Release:        1%{?dist}
 Summary:        Useful additions to futures, from the future
 
@@ -118,6 +118,9 @@ rm -rf doc/build/html/.{doctrees,buildinfo}
 %license LICENSE
 
 %changelog
+* Wed Nov 22 2017 RDO <dev@lists.rdoproject.org> 1.3.1-1
+- Update to 1.3.1
+
 * Thu Aug 10 2017 Alfredo Moralejo <amoralej@redhat.com> 1.3.0-1
 - Update to 1.3.0
 
