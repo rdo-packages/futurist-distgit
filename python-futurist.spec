@@ -27,22 +27,22 @@ Obsoletes:      python-futurist < %{version}-%{release}
 %endif
 
 BuildRequires:  python2-devel
-BuildRequires:  python-pbr
+BuildRequires:  python2-pbr
 BuildRequires:  git
-BuildRequires:  python-sphinx
-BuildRequires:  python-openstackdocstheme
-BuildRequires:  python-futures
-BuildRequires:  python-monotonic
-BuildRequires:  python-prettytable
-BuildRequires:  python-contextlib2
-BuildRequires:  python-setuptools
-BuildRequires:  python-six
+BuildRequires:  python2-sphinx
+BuildRequires:  python2-openstackdocstheme
+BuildRequires:  python2-futures
+BuildRequires:  python2-monotonic
+BuildRequires:  python2-prettytable
+BuildRequires:  python2-contextlib2
+BuildRequires:  python2-setuptools
+BuildRequires:  python2-six
 
-Requires:       python-six >= 1.10.0
-Requires:       python-monotonic
-Requires:       python-futures >= 3.0
-Requires:       python-contextlib2 >= 0.4.0
-Requires:       python-prettytable
+Requires:       python2-six >= 1.10.0
+Requires:       python2-monotonic
+Requires:       python2-futures >= 3.0
+Requires:       python2-contextlib2 >= 0.4.0
+Requires:       python2-prettytable
 
 %description -n python2-%{pypi_name}
 %{common_desc}
