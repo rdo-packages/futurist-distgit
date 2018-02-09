@@ -10,8 +10,8 @@
 Code from the future, delivered to you in the now.
 
 Name:           python-%{pypi_name}
-Version:        XXX
-Release:        XXX
+Version:        1.6.0
+Release:        1%{?dist}
 Summary:        Useful additions to futures, from the future
 
 License:        ASL 2.0
@@ -133,3 +133,6 @@ rm -rf doc/build/html/.{doctrees,buildinfo}
 %license LICENSE
 
 %changelog
+* Fri Feb 09 2018 RDO <dev@lists.rdoproject.org> 1.6.0-1
+- Update to 1.6.0
+
