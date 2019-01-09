@@ -1,6 +1,8 @@
-%if 0%{?fedora}
+%if 0%{?fedora} || 0%{?rhel} > 7
 %global with_python3 1
 %endif
+
+%global with_doc 1
 
 %{!?upstream_version: %global upstream_version %{version}%{?milestone}}
 
@@ -34,7 +36,7 @@ BuildRequires:  python2-openstackdocstheme
 BuildRequires:  python2-prettytable
 BuildRequires:  python2-setuptools
 BuildRequires:  python2-six
-%if 0%{?fedora} > 0
+%if 0%{?fedora} > 0 || 0%{?rhel} > 7
 BuildRequires:  python2-futures
 BuildRequires:  python2-monotonic
 BuildRequires:  python2-contextlib2
@@ -46,7 +48,7 @@ BuildRequires:  python-contextlib2
 
 Requires:       python2-six >= 1.10.0
 Requires:       python2-prettytable
-%if 0%{?fedora} > 0
+%if 0%{?fedora} > 0 || 0%{?rhel} > 7
 Requires:       python2-monotonic
 Requires:       python2-futures >= 3.0
 Requires:       python2-contextlib2 >= 0.4.0
@@ -80,11 +82,13 @@ Requires:       python3-prettytable
 %{common_desc}
 %endif
 
+%if 0%{?with_doc}
 %package -n python-%{pypi_name}-doc
 Summary:        Useful additions to futures, from the future - documentation
 
 %description -n python-%{pypi_name}-doc
 %{common_desc}
+%endif
 
 %description
 ========
@@ -102,11 +106,12 @@ Futurist
 %endif # with_python3
 %py2_build
 
+%if 0%{?with_doc}
 # generate html docs
 sphinx-build -W -b html doc/source doc/build/html
 # remove the sphinx-build leftovers
 rm -rf doc/build/html/.{doctrees,buildinfo}
-
+%endif
 
 %install
 %if 0%{?with_python3}
@@ -128,8 +133,10 @@ rm -rf doc/build/html/.{doctrees,buildinfo}
 %{python3_sitelib}/%{pypi_name}-*-py?.?.egg-info
 %endif
 
+%if 0%{?with_doc}
 %files -n python-%{pypi_name}-doc
 %doc doc/build/html
 %license LICENSE
+%endif
 
 %changelog
