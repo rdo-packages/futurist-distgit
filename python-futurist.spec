@@ -31,8 +31,6 @@ Obsoletes:      python-futurist < %{version}-%{release}
 BuildRequires:  python2-devel
 BuildRequires:  python2-pbr
 BuildRequires:  git
-BuildRequires:  python2-sphinx
-BuildRequires:  python2-openstackdocstheme
 BuildRequires:  python2-prettytable
 BuildRequires:  python2-setuptools
 BuildRequires:  python2-six
@@ -85,6 +83,8 @@ Requires:       python3-prettytable
 %if 0%{?with_doc}
 %package -n python-%{pypi_name}-doc
 Summary:        Useful additions to futures, from the future - documentation
+BuildRequires:  python2-sphinx
+BuildRequires:  python2-openstackdocstheme
 
 %description -n python-%{pypi_name}-doc
 %{common_desc}
