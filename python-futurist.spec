@@ -66,13 +66,11 @@ Summary:        Useful additions to futures, from the future
 
 BuildRequires:  python3-devel
 BuildRequires:  python3-pbr
-BuildRequires:  python3-monotonic
 BuildRequires:  python3-prettytable
 BuildRequires:  python3-setuptools
 BuildRequires:  python3-six
 
 Requires:       python3-six >= 1.10.0
-Requires:       python3-monotonic
 Requires:       python3-contextlib2 >= 0.4.0
 Requires:       python3-prettytable
 
