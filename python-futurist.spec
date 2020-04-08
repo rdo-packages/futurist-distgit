@@ -48,7 +48,6 @@ BuildRequires:  python%{pyver}-monotonic
 
 Requires:       python%{pyver}-six >= 1.10.0
 Requires:       python%{pyver}-prettytable
-Requires:       python%{pyver}-contextlib2 >= 0.4.0
 # Handle python2 exception
 %if %{pyver} == 2
 Requires:       python%{pyver}-futures >= 3.0
