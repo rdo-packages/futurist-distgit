@@ -31,7 +31,6 @@ BuildRequires:  python3-six
 BuildRequires:  python3-contextlib2
 
 Requires:       python3-six >= 1.10.0
-Requires:       python3-prettytable
 
 %description -n python3-%{pypi_name}
 %{common_desc}
