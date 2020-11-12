@@ -37,7 +37,7 @@ Summary:        Useful additions to futures, from the future
 
 BuildRequires:  python3-devel
 BuildRequires:  python3-pbr
-BuildRequires:  git
+BuildRequires:  git-core
 BuildRequires:  python3-prettytable
 BuildRequires:  python3-setuptools
 BuildRequires:  python3-six
