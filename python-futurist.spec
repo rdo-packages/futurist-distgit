@@ -42,8 +42,10 @@ BuildRequires:  python3-prettytable
 BuildRequires:  python3-setuptools
 BuildRequires:  python3-six
 BuildRequires:  python3-contextlib2
+BuildRequires:  python3-pbr
 
 Requires:       python3-six >= 1.10.0
+Requires:       python3-pbr >= 2.0.0
 
 %description -n python3-%{pypi_name}
 %{common_desc}
