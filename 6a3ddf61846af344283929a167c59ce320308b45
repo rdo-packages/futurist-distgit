@@ -68,6 +68,30 @@
       },
       "revId": "6a3ddf61846af344283929a167c59ce320308b45",
       "serverId": "270e2033-b340-4cff-9539-693957ebf0e7"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2e5157d6_ff6a8101",
+        "filename": "python-futurist.spec",
+        "patchSetId": 2
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 757
+      },
+      "writtenOn": "2022-02-28T10:00:10Z",
+      "side": 1,
+      "message": "ack, abandoning patchset due to unneeded changes.",
+      "parentUuid": "f644df1b_456752fc",
+      "range": {
+        "startLine": 48,
+        "startChar": 0,
+        "endLine": 48,
+        "endChar": 36
+      },
+      "revId": "6a3ddf61846af344283929a167c59ce320308b45",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7"
     }
   ]
 }
