@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2f813613_4207e88b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 635
+      },
+      "writtenOn": "2022-09-05T16:23:23Z",
+      "side": 1,
+      "message": "We need PBR to build package. Even though it\u0027s already present in Builroot, let\u0027s keep it explicitly in SPEC file",
+      "revId": "1914acf9a43cc7a42382fda93c069f743473a345",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7"
+    }
+  ]
+}
