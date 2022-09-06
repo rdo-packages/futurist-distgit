@@ -40,10 +40,8 @@ BuildRequires:  python3-pbr
 BuildRequires:  git-core
 BuildRequires:  python3-prettytable
 BuildRequires:  python3-setuptools
-BuildRequires:  python3-six
 BuildRequires:  python3-contextlib2
 
-Requires:       python3-six >= 1.10.0
 
 %description -n python3-%{pypi_name}
 %{common_desc}
