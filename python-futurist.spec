@@ -97,3 +97,4 @@ rm -rf doc/build/html/.{doctrees,buildinfo}
 %endif
 
 %changelog
+# REMOVEME: error caused by commit https://opendev.org/openstack/futurist/commit/159d752030d4ec3e36fd6edf55bf11272865dc31
